@@ -1,0 +1,52 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  height: 500vh;
+}
+
+.cognac-background {
+  background-color: red;
+  width: 100%;
+  height: 100vh;
+}
+
+.cognac-presentation {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.cognac-presentation > div {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100vh;
+}
+
+.cognac-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cognac-img > img {
+  height: 200px;
+}
+
+.cognac-presentation {
+  position: relative;
+}
+.cognac-txt {
+  position: absolute;
+  right: 0;
+}
+.cognac-txt > div {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding: 10%;
+}
+
+.cognac-buy {
+  position: absolute;
+}

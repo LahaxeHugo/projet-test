@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      div {
+        position : fixed;
+        width : 20px;
+        height : 20px;
+        left : 50px;
+      }
+      .div1 {
+        background-color : blue;
+        top : 50px;
+
+      }
+      .div2 {
+        background-color : red;
+        top : 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script>
+      $('.div1').animate({ left:'+=150px', top:'+=150px'},500);
+      $('.div2').animate({ left:'+=150px', top:'+=150px'},500);
+    </script>
+  </body>
+</html>

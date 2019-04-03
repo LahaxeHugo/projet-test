@@ -1,0 +1,291 @@
+body, html {
+  margin : 0;
+  padding : 0;
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+
+header {
+  background-color: black;
+  color: #9EA3A6;
+  height:100px;
+  padding-top: 25px;
+  margin: auto;
+  text-align: center;
+}
+header > div {
+  display: inline-block;
+}
+.commande-logo {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 50px;
+}
+.commande-logo > a > img {
+  width: 345px;
+}
+
+.commande-info {
+  display: inline-block;
+  vertical-align: top;
+}
+.commande-info > ul {
+  list-style-type: none;
+  padding : 0;
+  margin:0;
+}
+.commande-step {
+  display: inline-block;
+  width: 170px;
+}
+.commande-step > div {
+  position: relative;
+  margin: auto;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.commande-step > p {
+  margin: 10px 20px 0 20px;
+  text-align: center;
+}
+
+.step-active {
+  color: white;
+}
+.step-active > div {
+  background-color: #FFA134;
+}
+.step-active > p {
+  color: #FFA134;
+}
+
+.step-2 >div::after , .step-3 >div::after {
+  content : "";
+  position: absolute;
+  height: 1px;
+  background-color: white;
+  width: 140px;
+  transform: translate(-60% ,0);
+}
+.step-active > div::after  {
+  background-color: #FFA134;
+}
+
+.commande-main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.commande-img {
+  text-align: center;
+  color: #FFA134;
+  margin-top: 100px;
+  margin-right: 100px;
+}
+.commande-img > img {
+  font-size: 18px;
+}
+.commande-img >img {
+  height: 600px;
+}
+.commande-img-titre {
+  font-size: 60px;
+  font-weight: normal;
+  margin-top: -20px;
+}
+.commande-img > p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.commande-form {
+  width : 630px;
+  height: 50px;
+  margin-top: 150px;
+}
+.form {
+  box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+  padding-bottom: 60px;
+}
+
+.form > p:first-child {
+  font-size: 42px;
+  text-align: center;
+  padding : 32px 0px;
+  margin: 0;
+}
+
+.field {
+  width: 250px;
+  margin: 10px 30px;
+}
+
+.next {
+  background-color: #FFA134;
+  color: white;
+  width: 155px;
+  height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  margin: 90px auto;
+  margin-bottom: 0;
+  border:1px solid white;
+  cursor: pointer;
+}
+.next:hover {
+  border:1px solid #FFA134;
+  color: #FFA134;
+  background-color: white;
+}
+
+.recap {
+  width: 548px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin: auto;
+  padding-bottom: 5px;
+  margin-bottom: 27px;
+}
+.recap-titre {
+  margin: auto;
+  border-radius: 5px;
+  width: 532px;
+  background-color: #F5F5F5;
+  font-weight: bold;
+  padding: 7px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.recap-titre > div  {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background-color: #FFA134;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.recap-titre > p {
+  padding-top:2px;
+  margin: 0;
+}
+.recap >div {
+  text-align: center;
+}
+.recap-txt,.valider-txt {
+  padding-top: 10px;
+  font-weight: bold;
+  margin-right: 50px;
+  text-align: center;
+}
+.recap-txt>  span {
+  font-weight: normal;
+  color: #B1B1B1;
+}
+
+.recap-2 {
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  margin-top: 50px;
+}
+.recap-img > img {
+  height: 224px;
+}
+.quantite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #B1B1B1;
+}
+.quantite > img {
+  height: 32px;
+  opacity: 0.7;
+}
+.quantite > p {
+  font-size: 32px;
+  color: #FFA134;
+}
+p.quantite {
+  border-color: white;
+  margin: 0;
+}
+.recap-quantite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 19px;
+}
+.quantite_price {
+  font-size: 28px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+#quantite_remove, #quantite_add {
+  cursor: pointer;
+}
+.bouton {
+  display: flex;
+  justify-content: center;
+  padding-top: 19px;
+}
+.bouton > .next {
+  margin: 0;
+}
+.bouton > .next:first-child {
+  margin-right: 40px;
+  color: #FFA134;
+  border: 1px solid #FFA134;
+  background: white;
+}
+.bouton > .next:first-child:hover {
+  background: #FFA134;
+  color: white;
+}
+.form >p:nth-child(2) {
+  text-align: center;
+  font-weight: bold;
+}
+
+.valider {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.valider-txt {
+  margin-left: 80px;
+}
+.valider-txt > p:nth-child(2) {
+  padding: 0;
+}
+.valider-img > img{
+  height: 224px;
+}
+
+@media screen and (max-width: 1150px) {
+  .commande-img {
+    display: none;
+  }
+}
+@media screen and (max-width: 933px) {
+  .commande-logo {
+    margin-bottom: 30px;
+  }
+  header {
+    height: 200px;
+  }
+}

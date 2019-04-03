@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="commande.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <div class="commande-logo">
+          <a href="/">
+            <img src="../logo-V2-blanc.png" alt="">
+          </a>
+        </div>
+        <div class="commande-info">
+          <ul>
+            <li class="commande-step step-1 step-active">
+              <div>
+                <p>1</p>
+              </div>
+              <p>Adresse de livraison</p>
+            </li>
+            <li class="commande-step step-2">
+              <div>
+                <p>2</p>
+              </div>
+              <p>Récapitulatif commande</p>
+            </li>
+            <li class="commande-step step-3">
+              <div>
+                <p>3</p>
+              </div>
+              <p>Commande validée !</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="commande-main">
+      <div class="commande-img">
+        <img src="../cognac_ombre.png" alt="">
+        <p class="commande-img-titre">COGNAC XO</p>
+        <p>50 ans d’âge</p>
+      </div>
+      <form class="commande-form">
+        <div class="form" id="form_1">
+          <p>Apprenons à nous connaître !</p>
+
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="Monsieur, Madame" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Civilité</span>
+            </span>
+          </label><br>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="Dupont" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Nom</span>
+            </span>
+          </label>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="Michael" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Prénom</span>
+            </span>
+          </label>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="michael.dupont@mail.fr" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Email</span>
+            </span>
+          </label>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="+33 6 06 06 06 06" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">N° téléphone</span>
+            </span>
+          </label>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="18 rue boileau" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Adresse</span>
+            </span>
+          </label>
+          <label class="field a-field a-field_a2 page__field">
+            <input class="field__input a-field__input" placeholder="33000 Bordeaux" required>
+            <span class="a-field__label-wrap">
+              <span class="a-field__label">Code postal</span>
+            </span>
+          </label>
+          <div class="next" id="next_page_2">
+            <p>Suivant</p>
+          </div>
+        </div>
+        <div class="form" id="form_2">
+          <p>Récapitulatif commande</p>
+
+          <div class="recap">
+            <div>
+              <div class="recap-titre">
+                <div>
+                  1
+                </div>
+                <p> Adresse de Livraison</p>
+              </div>
+            </div>
+            <div class="recap-txt">
+              <p><span>Nom:</span> Georges Michael</p>
+              <p><span>Adresse:</span> 18 rue Boileau 33000 Bordeaux</p>
+              <p><span>Téléphone:</span> +33 6 06 06 06 06</p>
+            </div>
+          </div>
+
+          <div class="recap">
+            <div>
+              <div class="recap-titre">
+                <div>
+                  2
+                </div>
+                <p> Récapitulatif commande</p>
+              </div>
+            </div>
+            <div class="recap-2">
+              <div class="recap-img">
+                <img src="../cognac_ombre.png" alt="">
+              </div>
+              <div class="recap-txt">
+                <p>Cognac XO<br>«Exception» 50 ans d’âge</p>
+                <div class="recap-quantite">
+                  <div class="quantite" id="quantite_remove">
+                    <p>-</p>
+                  </div>
+                  <p class="quantite" class="quantite_number">1</p>
+                  <div class="quantite" id="quantite_add">
+                    <p>+</p>
+                  </div>
+                </div>
+                <p class="quantite_price"id="quantite_price"><span>5</span>00,00€ TTC</p>
+              </div>
+            </div>
+          </div>
+          <div class="bouton">
+            <div class="next" id="back_page_1">
+              <p>Retour</p>
+            </div>
+            <div class="next" id="next_page_3">
+              <p>Suivant</p>
+            </div>
+          </div>
+        </div>
+        <div class="form" id="form_3">
+        <p>Votre commande a bien <br>été validée !</p>
+        <p>Vous allez recevoir un mail de confirmation à michael.dupont@mail.fr</p>
+        <div class="valider">
+          <div class="valider-img">
+            <img src="../cognac_ombre.png" alt="">
+          </div>
+          <div class="valider-txt">
+            <p><span class="quantite_number">3</span> Cognac XO<br>«Exception» 50 ans d’âge</p>
+            <p class="quantite_price"><span>15</span>00,00€ TTC</p>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="commander.js"></script>
+  </body>
+</html>

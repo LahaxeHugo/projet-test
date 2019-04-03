@@ -1,0 +1,139 @@
+:root {
+  --txt-light-color: rgba(0,0,0,0.5);
+}
+
+html, body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: #F1F1F1;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: auto;
+  width: 15%;
+  padding: 1.5em 1.5em 1em 1em;
+  background-color: white;
+  opacity: 0.5;
+  position: fixed;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.logo {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  font-size: 0.7em;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 6px;
+  align-self: flex-end;
+  margin-bottom: 50px;
+}
+
+.aside-nav > ul {
+  margin: 0;
+  padding-left: 0;
+}
+.aside-nav > ul > li {
+  list-style-type: none;
+  text-transform: uppercase;
+  text-align: right;
+}
+.aside-nav > ul > li > a {
+  line-height: 1.7em;
+  color: var(--txt-light-color) ;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.aside-nav > ul > li > a:hover {
+  color: black;
+}
+
+.footer-aside {
+  font-size: 0.8em;
+}
+.footer-aside > p {
+  opacity: 0.9;
+}
+.footer-aside > ul {
+  padding: 0;
+}
+.footer-aside > ul > li {
+  display: inline-block;
+  list-style-type: none;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+}
+.footer-aside > ul > li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.main {
+  height: 2200px;
+  margin-left: 15%;
+}
+
+.carroussel {
+  position: relative;
+}
+.carroussel-item {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.carroussel-item > img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.carroussel-info {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  width: 500px;
+  bottom: 40px;
+  left: 40px;
+}
+.carroussel-info > h2 {
+  margin-top: 0;
+}
+.carroussel-info > p {
+  margin-bottom: 0;
+}
+
+.carroussel-list {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+}
+.carroussel-list > div {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+.carroussel-list-active > div {
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: black;
+  margin: 4px auto;
+}

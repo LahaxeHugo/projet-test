@@ -1,0 +1,22 @@
+.aside-nav > ul > li > a {
+  position: relative;
+}
+.aside-nav > ul > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+  -webkit-transform: scaleX(0);
+  -webkit-transition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+}
+.aside-nav > ul > li > a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+}
