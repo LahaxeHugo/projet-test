@@ -1,4 +1,4 @@
 **/logs
 **/include.php
-.htaccess
-.htpasswd
+**/.htaccess
+**/.htpasswd
