@@ -1,0 +1,154 @@
+/*** GENERAL ***/
+
+html, body {
+  margin:0;
+  padding:0;
+  font-family: 'Tahoma';
+}
+
+/*** UPLOAD ***/
+
+.upload-peinture {
+  width: 1100px;
+  height: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+}
+.upload-peinture > div:nth-child(1n) {
+  width: 500px;
+  margin: 25px;
+}
+.upload-peinture > div:nth-child(2) > input:first-of-type {
+  width: 500px;
+}
+.upload-peinture > div:nth-child(2) > textarea {
+  width: 500px;
+  height: 80px;
+}
+.upload-peinture > div > div > img {
+  max-width: 500px;
+  max-height: 300px;
+  height: auto;
+}
+.upload-peinture > div > div {
+  outline: 1px solid black;
+  height: 300px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*** EL ***/
+
+.list-peinture > thead > tr {background-color: #4cb24a;}
+.paintingEl {background-color: #d4efb6; height: 170px;}
+.paintingEl:nth-child(2n) {background-color: #b5d88c;}
+
+td.img-box {width : 20%;}
+/*td.txt-box {width : 55%;}*/
+td.date-box {width: 20%; text-align: center;}
+td.size-box {width : 10%;}
+td.price-box {width : 10%;}
+td.type-box {width : 8%;  text-align: center;}
+td.edit-box {width : 7%;}
+
+td.price-box > input, td.size-box > input {width: 120px;}
+
+/*** IMAGE EL ***/
+
+.img-box > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-box > div > img {
+  max-width: 290px;
+  max-height: 140px;
+}
+
+/*** TEXT EL ***/
+
+.txt-box {
+  display: flex;
+  flex-direction: column;
+}
+.txt-box > p {
+  margin: 10px;
+  overflow: auto;
+}
+.txt-box > p:first-child {
+  /* font-weight: bold; */
+  font-size: 1.6em;
+}
+.txt-box > p:nth-child(2) {
+  height: 100px;
+}
+
+td.txt-box > input, td.txt-box > textarea {
+	padding: 5px;
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+}	
+td.txt-box > textarea {
+	margin-top: 10px;
+	height: 80px;
+}
+
+
+/*** TEXT MODIFIER EL ***/
+
+.modif-peinture > input {
+  margin-top: 10px;
+  width: 500px;
+}
+.modif-peinture > textarea {
+  margin-top: 10px;
+  width: 500px;
+  height: 80px;
+}
+
+
+/*** BUTTON EL ***/
+
+.edit-box, .size-box, .price-box {
+  text-align: center;
+}
+
+/*** OVERLAY EL ***/
+
+.confirm-overlay {
+  position: fixed;
+  top:0;
+  left : 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  background-color: #F2F2F2;
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 15px;
+  width : 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.confirm-overlay > p {
+  margin:0 auto 20px auto;
+  width: 350px;
+  text-align: center;
+}
+.confirm-overlay button[name="suppr"] > a {
+  color : black;
+  text-decoration: none;  
+}
+
+#blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255,255,255,0.75);
+  z-index: 1;
+}

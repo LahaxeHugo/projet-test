@@ -1,0 +1,148 @@
+body {
+	font-family: Roboto, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* UPLOAD */
+
+.upload-timeline {
+  width: 1100px;
+  
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+}
+.upload-left {
+  width: 500px;
+  margin: 25px;
+}
+.upload-right > div:first-of-type > input {
+  width: 500px;
+}
+.upload-right textarea {
+  width: 500px;
+  height: 80px;
+}
+.upload-left .preview-box > img {
+  max-width: 500px;
+  max-height: 300px;
+  height: auto;
+}
+.upload-left .preview-box {
+  outline: 1px solid black;
+  height: 300px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.upload-right input, .upload-right textarea, .upload-right select {margin-bottom: 10px;}
+
+
+/* TIMELINE ELEMENT */
+
+#timeline_data> thead > tr {background-color: #4cb24a;}
+.timeline-el {background-color: #d4efb6;}
+.timeline-el:nth-child(2n) {background-color: #b5d88c;}
+
+.timeline-el > td {padding: 10px; text-align: center;}
+.timeline-el > td:nth-child(1) {width: 200px;}
+.timeline-el > td:nth-child(2) {width: 50px;}
+.timeline-el > td:nth-child(3) {width: 500px;}
+.timeline-el > td:nth-child(4) {width: 100px;}
+.timeline-el > td:nth-child(5) {width: 100px;}
+
+
+/* POP UP*/
+
+#popup_outer {
+	position: fixed;
+	top: 0;
+	left:0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	overflow-y: scroll;
+	z-index:100;
+}
+
+#popup_inner {
+	width: 80%;
+	margin: 5% auto;
+	min-height: 90vh;
+	background-color: white;
+	position: relative;
+	padding: 20px;
+}
+
+#popup_close {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#popup_outer.hideBckgrnd ~ * {
+	filter: blur(3px);
+}
+
+#popup_content > h2 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+#popup_content > div > p {
+	margin-bottom : 5px;
+	font-weight: bold;
+}
+
+#popup_content input {
+	width: 100%;
+}
+
+#popup_content textarea {
+	width: 100%;
+	height: 200px;
+}
+
+#popup_content .box-button {
+	text-align: center;
+	margin-top: 30px;
+}
+#popup_content .box-button > button:first-child {
+	margin-right: 20px;
+}
+#popup_content .box-button > button {
+	padding : 5px 15px;
+}
+
+#popup2_outer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 200;
+	filter: blur(0)!important;
+}
+
+#popup2_inner {
+	background-color: white;
+	width: 400px;
+	text-align: center;
+	padding: 10px 0;
+	margin: auto;
+	border: 1px solid black;
+	border-top: 0;
+}
+
+#popup2_inner p {
+	margin-top: 0;
+}
+#popup2_inner button:last-child {
+	margin-left: 10px;
+}
+

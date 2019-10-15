@@ -129,7 +129,7 @@ header > div {
   background-color: #FFA134;
   color: white;
   width: 155px;
-  height: 41px;
+  x: 41px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/homepages/37/d793406285/htdocs/bcko/.htpasswd"
+#Require valid-user

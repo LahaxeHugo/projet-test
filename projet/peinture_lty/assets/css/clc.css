@@ -1,0 +1,41 @@
+.hero {
+  background: url("../img/changeons-choses-banniere.png") no-repeat;
+  background-size: cover;
+}
+
+.hero > p {
+  font-size: 23px;
+}
+
+
+.painting-el {
+  width: 883px;
+  height: 444px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 90px;
+  display : flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  
+}
+
+.painting-el .image-box {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.painting-el .image-box img {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.painting-el .text-box {
+  margin-left: 72px;
+  margin-top: 80px;
+  width: 410px;
+}
