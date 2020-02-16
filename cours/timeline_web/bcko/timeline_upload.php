@@ -11,7 +11,7 @@
 		'png'
 	);
 	if (isset($_REQUEST['timelineName']) && isset($_REQUEST['timelineDate'])) {
-		$timeline = new TIMELINE_Obj($dbObj, 'timeline_date');
+		$timeline = new TIMELINE_Obj($dbObj, TIMELINE_DATE);
 		$timeline->name = $_REQUEST['timelineName'];
 		$timeline->desc = isset($_REQUEST['timelineDesc']) ? $_REQUEST['timelineDesc'] : '';
 		$timeline->date = isset($_REQUEST['timelineDate']) ? $_REQUEST['timelineDate'] : '';
@@ -49,7 +49,5 @@
 		}
 		
 	}
-	
-	
 	
 ?>

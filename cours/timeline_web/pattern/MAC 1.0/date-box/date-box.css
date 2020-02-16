@@ -1,0 +1,56 @@
+.date-box {
+	display: inline-flex;
+	flex-direction: row-reverse;
+	align-items : center;
+	box-sizing: border-box;
+	padding: 0 20px;
+	
+	background: #FCF6E8;
+	border: 2px solid #2D2C28;
+	border-radius: 4px;
+	box-shadow: 8px 8px black;
+	
+	font-family: "Fellix", sans-serif;
+	color: #2D2C28;
+	text-align: left;
+}
+
+.date-box > .date-button {
+	display: flex;
+	align-items: center;
+	height: 31px;
+	border: 2px solid #2D2C28;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.date-box > .date-button > p {
+	font-size: 13px;
+	line-height: 16px;
+	margin: 8px;
+}
+
+.date-box > .date-txt {
+	margin: 12px 32px 12px 16px;
+	max-width: 224px;
+}
+
+.date-box > .date-txt > h2 {
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: bold;
+}
+
+.date-box > .date-txt > p {
+	font-size: 13px;
+	line-height: 130%;
+	margin-top: 4px;
+}
+
+.date-box > .date-icon {
+	box-sizing: border-box;
+	width: 60px;
+	height: 60px;
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+}

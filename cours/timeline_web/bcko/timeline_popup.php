@@ -9,7 +9,7 @@
 		$id = $_REQUEST['id'];
 		$type = $_REQUEST['type'];
 		
-		$timeline = new TIMELINE_Obj($dbObj, 'timeline_date');
+		$timeline = new TIMELINE_Obj($dbObj, TIMELINE_DATE);
 		$timeline->id = $id;
 		
 		if($type == 'modify') {

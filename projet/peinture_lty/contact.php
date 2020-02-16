@@ -89,7 +89,21 @@
         padding : 3px 0;
         cursor: pointer;
       }
-
+			
+			.recaptcha-box {
+				margin: 10px 0 20px 0;
+			}
+			.g-recaptcha > div {
+				margin: auto;
+			}
+			.recaptcha-error {
+				color: red;
+				font-size: 14px;
+				margin: 0;
+			}
+			.recaptcha-box-error {
+				border: 1px solid red;
+			}
     </style>
   </head>
   <body>
@@ -123,15 +137,19 @@
       <div class="contact-form">
         <p>Me contacter</p>
         <p>Une oeuvre vous intéresse ?<br>
-Remplissez ce formulaire pour me contacter par mail !</p>
+					Remplissez ce formulaire pour me contacter par mail !</p>
         <form id="post_mail" action="post_mail.php" method="post">
         	<div>
-	          <input type="text" name="nom" value="" placeholder="Nom" required>
-	          <input type="tel" name="num_tel" value="" placeholder="Numéro de téléphone" required>
+	          <input type="text" name="nom" value="" placeholder="Nom" pattern=".{0}|.{10,}" required>
+	          <input type="tel" name="num_tel" value="" placeholder="Numéro de téléphone" pattern=".{3,}" required>
 	         </div>
-          <input type="mail" name="mail" value="" placeholder="Adresse email" required> <br>
-          <textarea name="message" placeholder="Votre message..." required></textarea><br>
-          <!-- <input type="submit" value="Send"> -->
+          <input type="mail" name="mail" value="" placeholder="Adresse email" pattern=".{0}|.{5,}" required> <br>
+          <textarea name="message" placeholder="Votre message..." pattern=".{3,}" required></textarea><br>
+          <div class="recaptcha-box">
+          	<div class="g-recaptcha" data-sitekey="6Lewv8YUAAAAANB5SoqVLGpmAzBq_bm83Zv3sD55"></div>
+          	<p class="recaptcha-error">Veuillez prouver que vous n'êtes pas un robot.</p>
+          </div>
+          <input type="submit" id="submit-hidden" style="display: none;" value="Send">
         </form>
         <div class="contact-form-submit">
           <p>ENVOYER LE MESSAGE</p>
@@ -140,9 +158,30 @@ Remplissez ce formulaire pour me contacter par mail !</p>
     </div>
     <?php include 'footer.php';?>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script>
-    	$('.contact-form-submit').on('click', function(e) {
-    		$('#post_mail').submit();
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script async defer>
+    	$(function() {
+    		
+    		$('.recaptcha-error').hide();
+    		
+	    	$('.contact-form-submit').on('click', function(e) {
+          
+	    		var captchaChecked = grecaptcha.getResponse().length;
+	    		
+	    		if (!$("#post_mail")[0].checkValidity()) {
+				    $("#post_mail").find("#submit-hidden").click();
+				    
+				    if(captchaChecked == 0) {
+				    	$('.recaptcha-error').show();
+				    }
+				  } else {
+				  	if(captchaChecked != 0) {
+		    			$('#post_mail').submit();
+		    		} else {
+		    			$('.recaptcha-error').show();
+		    		}
+					}
+	    	});
     	});
     </script>
   </body>

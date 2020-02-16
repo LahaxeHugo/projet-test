@@ -1,0 +1,203 @@
+body {
+	background-image: url('../img/background/background_mac-sierra.png');
+}
+
+.date-box {
+	background: linear-gradient(180deg, rgba(251, 251, 251, 0.95) 0%, rgba(243, 243, 243, 0.95) 100%);
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.35);
+	border-radius: 8px;
+	border: 1px solid transparent;
+}
+
+.date-box > .date-button {
+	border: 0;
+	margin-left: 20px;
+	white-space: nowrap;
+	color: rgba(45, 44, 40, 0.6)
+}
+
+.decade-box > p:first-child, .left-fixed-column .desktop-icon > p {
+	padding: 0 3px;
+	font-weight: normal;
+	color: white;
+}
+.left-fixed-column .desktop-icon > p {
+	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.date-box > .date-txt {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.date-box > .date-txt > h2 {
+	font-size: 15px;
+}
+.date-box > .date-txt > p {
+	font-size: 12px;
+}
+
+#custom_scrollbar {
+	background: transparent;
+	border: 0;
+}
+.scrollbar-top, .scrollbar-bottom {
+	visibility: hidden;
+	height: 2px;
+}
+.scrollbar-main {
+	height: calc(100% - 16px);
+}
+
+.scrollbar-cursor {
+	background: linear-gradient(180deg, rgba(251, 251, 251, 0.95) 0%, rgba(243, 243, 243, 0.95) 100%);
+	border-radius: 6px;
+	width: 8px;
+	border: 0;
+}
+#editor_scroll {
+	border-left: 0;
+	background: transparent;
+}
+#editor_scroll .scrollbar-cursor {
+	background: white;
+	border-radius: 6px;
+}
+
+
+.editor-reduce, .editor-minimize, .filter-reduce, .filter-minimize {
+	
+}
+.editor-close, .editor-reduce, .editor-minimize, .filter-close, .filter-reduce, .filter-minimize {
+	border: 0;
+}
+.editor-close, .filter-close {
+	background: #FF5A52;
+}
+.editor-reduce, .filter-reduce {
+	background: #E6C02A;
+}
+.editor-minimize, .filter-minimize {
+	background: #57C038;
+}
+
+.editor-edit, .filter-search {
+	color: #A3A3A3;
+}
+.editor-edit > .editor-font, .filter-edit > .filter-font {
+	background: white;
+	border: 1px solid #A3A3A3;
+	box-shadow: inset 0px 2px 0px #FFFFFF;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+#editor_frame .editor-edit > .editor-font > p , .filter-edit > .filter-font > p {
+	margin-right: 30px;
+}
+
+#editor_frame .editor-edit > .editor-font img, .filter-edit > .filter-font img {
+height: 100%;
+	margin: 0;
+	padding: 0 4px;
+	position: absolute;
+	right: 0;
+	background: linear-gradient(180deg, #2A75E4 0%, #1B5EC5 100%);
+}
+
+#editor_frame .editor-edit > .editor-align > hr {
+	border-color: #A3A3A3;
+}
+#editor_frame .editor-edit > .editor-fontColor {
+	border: 1px solid #A3A3A3;
+	color: #A3A3A;
+}
+#editor_frame .editor-edit > .editor-font > p {
+	
+}
+
+.editor-header, .filter-header, .filter-edit {
+	background: linear-gradient(180deg, #E4E4E4 0%, #CDCCCC 100%);
+}
+#editor_frame .editor-edit {
+	background: #E2E2E2;
+}
+.editor-header, filter-header, #editor_frame .editor-edit, .filter-edit {
+	border-bottom: 1px solid #A5A6A7;
+}
+#editor_frame .editor-edit {
+	border-bottom: 0;
+}
+
+#editor_frame .editor-footer {
+	border-top: 1px solid rgba(165, 166, 167, 0.95);;
+	background: linear-gradient(180deg, #E4E4E4 0%, #CDCCCC 100%);
+  color: #5F6263;
+}
+#editor_frame .editor-footer > div {
+	border-left: 0;
+}
+#editor_frame, #editor_frame .editor-pageOuter, #filter_date_popup, #filter_cat_popup {
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+}
+#editor_frame .editor-content {
+	background: #EFEFEF;
+}
+#editor_frame .editor-pageOuter {
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+	border: 1px solid white;
+	border-radius: 4px;
+}
+
+
+.filter-header {
+	background: linear-gradient(180deg, #E3E3E3 0%, #CCC 100%);
+}
+.filter-edit {
+	background: linear-gradient(180deg, #CCC 0%, #B9B9B9 100%);
+}
+.filter-edit > div {
+	border: 1px solid black;
+	border-radius: 0;
+}
+
+.filter-edit > .editor-option > div {
+	background: transparent;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+
+.filter-edit > div {
+	background: linear-gradient(180deg, #DDDDDD 0%, #FDFDFD 100%);
+	border: 1px solid rgba(82, 86, 90, 0.7);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.45);
+	border-radius: 5px;
+}
+.editor-edit .editor-search, .filter-edit .filter-search {
+	border-radius: 15px;
+}
+
+.filter-edit > .editor-next {
+	background: linear-gradient(90deg, #DDDDDD 0%, #FDFDFD 100%);
+}
+.filter-edit > .editor-prev {
+	background: linear-gradient(270deg, #DDDDDD 0%, #FDFDFD 100%);
+}
+.filter-edit > .editor-align > hr {
+	border: 1px solid 	#868686;
+	border-radius: 3px;
+}
+.filter-edit > .editor-option > div {
+	border-radius: 1px;
+	border: 1px solid #868686;
+}
+
+#filter_date > img {
+	width: 74px;
+	height: auto;
+	margin-bottom: 0;
+}
+.filter-filters .desktop-icon img[isselect="1"] {
+	margin-bottom: 20px;
+}

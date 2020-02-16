@@ -11,8 +11,10 @@ class TIMELINE_Obj {
 	public $img_ext = '';
 	public $img_full = '';
 	public $timeline_array = array();
-	public $timeline_html = '';
+	public $timeline_bcko = '';
+	public $timeline_main = '';
 	public $timeline_category = '';
+	public $timeline_cat_array = array();
 	
 	public function __construct($param_dbObj, $param_dbTable) {
 		$this->dbObj = $param_dbObj;
@@ -63,57 +65,106 @@ class TIMELINE_Obj {
 				$tempMax_res->closeCursor();
 				unset($tempMax_req, $tempMax_res, $tempMax_value);
 			}
-		}
-		unset($temp_req);
+		} unset($temp_req);
 	}
 	
 	
-	public function load($type = 'array') {
-
+	public function load($type = 'array', $dataSize='full') {
+		
+		if ($dataSize == 'full') $selectReq = ' `main`.*';		//, `cat`.`name` AS `category_name` ';
+		elseif ($dataSize == 'main') $selectReq = '`main`.`id`, `main`.`date`, `main`.`name`, `main`.`category`';
+		
 		$tLoad_req = ''
-								.' SELECT `main`.*, `cat`.`name` AS `category_name` FROM `' .$this->dbTable .'` AS `main` ' 
-								.' LEFT JOIN `timeline_category` AS `cat`'
-								.' ON `main`.`category` = `cat`.`id`'
+								.' SELECT' .$selectReq
+								.' FROM `' .$this->dbTable .'` AS `main` ' 
+								//.' LEFT JOIN `timeline_category` AS `cat`'
+								//.' ON `main`.`category` = `cat`.`id`'
 								.($this->id ? 'WHERE `main`.`id` = '.$this->id : '')
-								.' ORDER BY `date` DESC';
+								.' ORDER BY `date`'
+								//.' LIMIT 0,10'
+								.'';
 			
 		if (($tLoad_res = $this->dbObj->query($tLoad_req)) === FALSE) {
 			$errorInfo = $this->dbObj->errorInfo();
 			$tStr = sprintf(DBERROR_fmt, __FILE__, __LINE__, $errorInfo[1], $errorInfo[2], $tLoad_req);
 			echo $tStr; error_log($tStr); unset($tStr);
 		} else {
+			$prevDateYear = 0;
+			
 			while($tLoad_array = $tLoad_res->fetch(PDO::FETCH_ASSOC)) {
 				
-				$txtFormat_date = date('Y F d', strtotime($tLoad_array['date']));
+				$categories = explode(';', $tLoad_array['category']);
+				$categories_str = '';
+				foreach ($categories as $cat) {
+				 	 $categories_str .= ' category_'.$cat;
+				} unset($cat);
 				
-				if ($type == 'html') {
-					$this->timeline_html	.=''
-																.	'<tr class="timeline-el" data-id="' .$tLoad_array['id'] .'">'	
-																.		'<td>' .$txtFormat_date .'</td>'
-																.		'<td>' .$tLoad_array['id'] .'</td>'
-																.		'<td>' .$tLoad_array['name'] .'</td>'
-																.		'<td>' .$tLoad_array['category_name'] .'</td>'
-																.		'<td><a href="#" class="timeline-edit">Link</a></td>'
-																.	'</tr>'	
-																.	'';
+				if ($type == 'bcko') {
+					$txtFormat_date = date('Y F d', strtotime($tLoad_array['date']));
+					
+					$this->timeline_bcko .=''
+							.'<tr class="timeline-el" data-id="' .$tLoad_array['id'] .'">'	
+							.	'<td>' .$txtFormat_date .'</td>'
+							.	'<td>' .$tLoad_array['id'] .'</td>'
+							.	'<td>' .$tLoad_array['name'] .'</td>'
+							.	'<td>' .$tLoad_array['category'] .'</td>'
+							.	'<td><a href="#" class="timeline-edit">Link</a></td>'
+							.'</tr>'	
+							.'';
 				} 
 				elseif ($type == 'array') {
+					$txtFormat_date = date('Y F d', strtotime($tLoad_array['date']));
 					$this->timeline_array[] = array(
-																			'id'					=> $tLoad_array['id'],
-																			'name'				=> $tLoad_array['name'],
-																		'date'				=> $tLoad_array['date'],
-																			'description'	=> $tLoad_array['description'],
-																			'cat_id'			=> $tLoad_array['category'],
-																			'cat_name'		=> $tLoad_array['category_name'],
-																			'credits'			=> $tLoad_array['credits'],
-																			'image'				=> $tLoad_array['image']
-																		);
+							'id'					=> $tLoad_array['id'],
+							'name'				=> $tLoad_array['name'],
+							'date'				=> $tLoad_array['date'],
+							'dateTxt'			=> $txtFormat_date,
+							'description'	=> isset($tLoad_array['description'])		? $tLoad_array['description'] : '',
+							
+							'cat_id'			=> isset($tLoad_array['category'])			? $tLoad_array['category'] : '',
+							'cat_name'		=> isset($tLoad_array['category_name'])	? $tLoad_array['category_name'] : '',
+							'credits'			=> isset($tLoad_array['credits'])				? $tLoad_array['credits'] : '',
+							'image'				=> isset($tLoad_array['image'])					? $tLoad_array['image'] : ''
+					);
+				}
+				elseif ($type == 'main') {
+					$txtFormat_date = date('F jS Y', strtotime($tLoad_array['date']));
+					$dateYear = date('Y', strtotime($tLoad_array['date']));
+					$dateYearDecade = substr($dateYear,0 , -1).'0';
+					
+					if ($prevDateYear == 0) {
+						$this->timeline_main .= '<div class="decade-box" data-decade="'.$dateYearDecade.'"><p>'.$dateYearDecade.'</p>';
+					}
+					elseif (substr($prevDateYear, 0, -1) < substr($dateYear,0 , -1)) {
+						$this->timeline_main .= '</div><div class="decade-box" data-decade="'.$dateYearDecade.'"><p>'.$dateYearDecade.'</p>';
+					}
+					
+					$prevDateYear = $dateYear; 
+					
+					$this->timeline_main .=	''
+							.'<div class="date-box ' .$categories_str .'" data-id="'.$tLoad_array['id'].'" data-year="'.$dateYear.'">'
+							.		'<div class="date-button">'
+							.			'<p>Learn More</p>'
+							.		'</div>'
+							.		'<div class="date-txt">'
+							.			'<h2>'.$tLoad_array['name'].'</h2>'
+							.			'<p>'.$txtFormat_date.'</p>'
+							.		'</div>'
+							.		'<div class="date-icon">'
+							.			'<img src="assets/img/icon/file_mac-01.svg" alt="ICON">'
+							.		'</div>'
+							.'</div>'
+							.'';
 				}
 			}
 			$tLoad_res->closeCursor();
 			
-			if ($type == 'html') return $this->timeline_html;
+			if ($type == 'bcko') return $this->timeline_bcko;
 			if ($type == 'array') return $this->timeline_array;
+			if ($type == 'main') {
+				$this->timeline_main .='</div>';
+				return $this->timeline_main;
+			}
 		}
 		unset($tLoad_req, $tLoad_res, $tLoad_array);
 	}
@@ -127,8 +178,8 @@ class TIMELINE_Obj {
 		}
 	}
 	
-	public function loadSelect() {
-		$tCat_req = 'SELECT * FROM `' .$this->dbTable .'`';
+	public function loadSelect($type = 'select') {
+		$tCat_req = 'SELECT * FROM `' .TIMELINE_CAT .'`';
 		if (($tCat_res = $this->dbObj->query($tCat_req)) === FALSE) {
 			$errorInfo = $this->dbObj->errorInfo();
 			$tStr = sprintf(DBERROR_fmt, __FILE__, __LINE__, $errorInfo[1], $errorInfo[2], $tCat_req);
@@ -136,11 +187,17 @@ class TIMELINE_Obj {
 		} else {
 			while($tCat_array = $tCat_res->fetch(PDO::FETCH_ASSOC)) {
 				
-				$this->timeline_category.=''
-																.	'<option value="' .$tCat_array['id'] .'">'
-																.		$tCat_array['name']
-																.	'</option>'
-																.	'';				
+				if ($type == 'select') {
+					$this->timeline_category.=''
+																	.	'<option value="' .$tCat_array['id'] .'">'
+																	.		$tCat_array['name']
+																	.	'</option>'
+																	.	'';					
+				}
+				elseif ($type == 'array') {
+					$this->timeline_cat_array[($tCat_array['id'])] = $tCat_array['name'];
+				}
+				
 			}
 			$tCat_res->closeCursor();
 		}

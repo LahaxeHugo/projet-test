@@ -1,0 +1,11 @@
+@font-face {
+	font-family: "Fellix",
+	src: url("fonts/Felix/Fellix-Regular.otf")
+}
+
+body {
+	text-align: center;
+}
+body > * {
+	margin: 100px auto 0 auto;
+}

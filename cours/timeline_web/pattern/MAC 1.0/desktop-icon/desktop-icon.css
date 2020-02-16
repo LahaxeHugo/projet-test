@@ -1,0 +1,11 @@
+.desktop-icon {
+	font-size: 13px;
+	line-height: 16px;
+	text-align: center;
+	color: #2D2C28;
+	font-weight: bold;
+	font-family: "Fellix", sans-serif;
+}
+.desktop-icon > img {
+	margin-bottom: 10px;
+}

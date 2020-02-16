@@ -1,0 +1,94 @@
+body {
+	background: #A0A0A0;
+}
+
+.date-box {
+	border-radius: 0;
+	border: 1px solid black;
+	box-shadow: 1px 1px 0px black;
+}
+
+.date-box > .date-button {
+	border-radius: 0;
+	border: 1px solid black;
+	box-shadow: 1px 1px 0px black;
+}
+
+.decade-box > p:first-child, .desktop-icon > p {
+	background-color: white;
+	padding: 0 3px;
+	font-weight: normal;
+}
+.date-box > .date-txt > h2 {
+	font-size: 15px;
+}
+.date-box > .date-txt > p {
+	font-size: 12px;
+}
+
+#custom_scrollbar {
+	border: 1px solid black;
+}
+.scrollbar-top, .scrollbar-bottom {
+	border-bottom: 1px solid black;
+}
+.scrollbar-cursor {
+	border-radius: 0;
+	border: 1px solid black;
+	box-shadow: 1px 1px 0px black;
+}
+#editor_scroll {
+	border-left: 1px solid black;
+}
+
+
+.editor-reduce, .editor-minimize, .filter-reduce, .filter-minimize {
+	display: none;
+}
+.editor-close, .editor-reduce, .editor-minimize, .filter-close, .filter-reduce, .filter-minimize {
+	border: 1px solid black;
+	border-radius: 0;
+}
+
+.editor-edit > .editor-font, .filter-edit > .filter-font {
+	border-radius: 0;
+	border: 1px solid black;
+}
+#editor_frame .editor-edit > .editor-align > hr {
+	border-radius: 0;
+}
+#editor_frame .editor-edit > .editor-fontColor {
+	border: 1px solid black;
+}
+#editor_frame .editor-edit > .editor-font > p {
+	margin-right: 10px;
+}
+
+.editor-header, filter-header, #editor_frame .editor-edit, .filter-edit {
+	border-bottom: 1px solid black;
+}
+#editor_frame .editor-footer {
+	border-top: 1px solid black;
+}
+#editor_frame .editor-footer > div {
+	border-left: 1px solid black;
+}
+#editor_frame, #editor_frame .editor-pageOuter, #filter_date_popup, #filter_cat_popup {
+	border: 1px solid black;
+	box-shadow: 0 0 0;
+	border-radius: 0;
+}
+#editor_frame .editor-content {
+	background-color: #ACACAC;
+}
+
+.filter-edit > div {
+	border: 1px solid black;
+	border-radius: 0;
+}
+
+.filter-edit > .editor-option > div {
+	background: transparent;
+	border: 1px solid black;
+	box-sizing: border-box;
+}

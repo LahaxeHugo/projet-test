@@ -4,8 +4,9 @@ include_once '../include.php';
 ( $dbObj = getconnectionObj() ) or die( $stopScript );
 
 
-$timeline = new TIMELINE_Obj($dbObj, 'timeline_date');
-$timelineData_str = $timeline->load('html');
+$timeline = new TIMELINE_Obj($dbObj, TIMELINE_DATE);
+$timelineData_str = $timeline->load('bcko');
+
 
 $timelineCat = new TIMELINE_Obj($dbObj, 'timeline_category');
 $timelineCat_str = $timelineCat->loadSelect();
@@ -19,7 +20,7 @@ $dbObj = null; unset($dbObj);
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="back.css"> 
+    <link rel="stylesheet" type="text/css" href="../assets/css/back.css"> 
   </head>
   <body>
   	<div id="popup_outer">
@@ -93,7 +94,7 @@ $dbObj = null; unset($dbObj);
 		  	<?php echo $timelineData_str; ?>
 		  </tbody>
     </table>
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
     <script src="back.js"></script>
   </body>
 </html>

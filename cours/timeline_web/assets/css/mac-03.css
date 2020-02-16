@@ -1,0 +1,124 @@
+body {
+	background: #62649C;
+}
+
+.date-box {
+	border-radius: 0;
+	border: 1px solid #5D5D5D;
+	background: #CDCDCD;
+	box-shadow: 2px 2px 0px #000000, inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+
+.date-box > .date-button {
+	border-radius: 0;
+	background: #CDCDCD;
+	border: 1px solid #5D5D5D;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+
+.decade-box > p:first-child, .desktop-icon > p {
+	background-color: white;
+	padding: 0 3px;
+	font-weight: normal;
+	font-style: italic;
+}
+.date-box > .date-txt > h2 {
+	font-size: 15px;
+}
+.date-box > .date-txt > p {
+	font-size: 12px;
+}
+
+#custom_scrollbar {
+	background: #CDCDCD;
+	border: 1px solid #5D5D5D;
+	box-shadow: 2px 2px 0px #000000, inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C, inset 2px 0px 3px rgba(0, 0, 0, 0.35);
+}
+.scrollbar-top, .scrollbar-bottom {
+	
+}
+.scrollbar-main {
+	
+}
+
+.scrollbar-cursor {
+	border-radius: 0;
+	background: #E4E6E5;
+	border: 1px solid #5D5D5D;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+#editor_scroll {
+	border-left: 1px solid #5D5D5D;
+	background: #CDCDCD;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C, inset 2px 0px 3px rgba(0, 0, 0, 0.35);
+}
+
+
+.editor-reduce, .editor-minimize, .filter-reduce, .filter-minimize {
+	display: none;
+}
+.editor-close, .editor-reduce, .editor-minimize, .filter-close, .filter-reduce, .filter-minimize {
+	background: linear-gradient(133.53deg, #6A6A68 26.74%, rgba(205, 205, 205, 0) 96.43%);
+	border: 1px solid #5D5D5D;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+	border-radius: 0;
+}
+
+.editor-edit > .editor-font, .filter-edit > .filter-font {
+	border-radius: 0;
+	background: #CDCDCD;
+	border: 1px solid #5D5D5D;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+#editor_frame .editor-edit > .editor-align > hr {
+	border-radius: 0;
+}
+#editor_frame .editor-edit > .editor-fontColor {
+	border: 1px solid #5D5D5D;
+}
+#editor_frame .editor-edit > .editor-font > p {
+	margin-right: 10px;
+}
+
+.editor-header, .filter-header {
+	background: #ACACAC;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+#editor_frame .editor-edit, .filter-edit {
+	background: #CDCDCD;
+	box-sizing: border-box;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+}
+.editor-header, filter-header, #editor_frame .editor-edit, .filter-edit {
+	border-bottom: 1px solid #5D5D5D;
+}
+.editor-header {
+	border-bottom: 1px solid black;
+}
+
+#editor_frame .editor-footer {
+	border-top: 1px solid #5D5D5D;
+	box-shadow: inset 0px 2px 0px #FFFFFF, inset 0px -2px 0px #8C8C8C, inset -2px 0px 0px #8C8C8C;
+	background: #CDCDCD;
+}
+#editor_frame .editor-footer > div {
+	border-left: 0;
+}
+#editor_frame, #editor_frame .editor-pageOuter, #filter_date_popup, #filter_cat_popup {
+	border: 1px solid black;
+	box-shadow: 0 0 0;
+	border-radius: 0;
+}
+#editor_frame .editor-content {
+	background-color: #ACACAC;
+}
+
+.filter-edit > div {
+	border: 1px solid black;
+	border-radius: 0;
+}
+.filter-edit > .editor-option > div {
+	background: transparent;
+	border: 1px solid black;
+	box-sizing: border-box;
+}

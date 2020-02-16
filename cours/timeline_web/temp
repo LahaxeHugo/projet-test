@@ -1,0 +1,68 @@
+<div class="editor-prev">
+	<img src="assets/img/icon/arrow_mac-01.svg">
+</div>
+<div class="editor-next">
+	<img src="assets/img/icon/arrow_mac-01.svg">
+</div>
+<div class="editor-align">
+	<hr><hr><hr>
+</div>
+<div class="editor-option">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</div>
+
+
+#editor_frame .editor-edit > div {
+	width: 25px;
+	height: 25px;
+	box-sizing: border-box;
+	border: 2px solid #2D2C28;
+	border-radius: 4px;
+	margin-left: 4px;
+}
+
+#editor_frame .editor-edit > .editor-prev, #editor_frame .editor-edit > .editor-next {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#editor_frame .editor-edit > .editor-prev {
+	padding-right: 2px;
+	transform: rotate(-90deg);
+}
+#editor_frame .editor-edit > .editor-next {
+	transform: rotate(90deg);
+}
+
+#editor_frame .editor-edit > .editor-align {
+	margin-left: 32px;
+	flex-direction: column;
+	padding-top: 4px;
+}
+#editor_frame .editor-edit > .editor-align > hr {
+	margin: 0 auto;
+	margin-bottom: 4px;
+	border: 1px solid #2D2C28;
+	width: 12px;
+	border-radius: 3px;
+	background-color: #2D2C28;
+}
+
+#editor_frame .editor-edit > .editor-option {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 2px;
+}
+#editor_frame .editor-edit > .editor-option > div {
+	background-color: #2D2C28;
+	border-radius: 1px;
+	margin: 1px;
+	width: 6px;
+	height: 6px;
+}

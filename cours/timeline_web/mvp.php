@@ -3,7 +3,7 @@
 include_once 'include.php';
 ( $dbObj = getconnectionObj() ) or die( $stopScript );
 
-$timeline = new TIMELINE_Obj($dbObj, 'timeline_date');
+$timeline = new TIMELINE_Obj($dbObj, TIMELINE_DATE);
 $timelineData_array = $timeline->load('array');
 ?>
 <!DOCTYPE html>
